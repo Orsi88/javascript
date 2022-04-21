@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 9 aula 11</title>
+</head>
+<body>
+    <h1>Nacionalidade</h1>
+    País natal <input type="search" name="paisn" id="paisn">
+    <input type="button" value="Verificar" onclick="identificar()">
+    <div id="res">
+
+    </div>
+    <script>
+        function identificar() {
+            var paisloc = window.document.querySelector ('Input#paisn')
+            var res = window.document.querySelector('div#res')
+            var loc = String(paisloc.value.toUpperCase())
+            res.innerHTML += `O seu país de origem é ${loc.toUpperCase()}.`
+            if (loc == 'BRASIL') {
+                res.innerHTML += '<p>Você é brasileiro!</p>'
+            }else {
+                res.innerHTML += '<p>Você é estrangeiro!</p>'
+            }
+        }
+    </script>
+</body>
+</html>
