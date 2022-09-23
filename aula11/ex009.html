@@ -7,23 +7,22 @@
     <title>Atividade 9 aula 11</title>
 </head>
 <body>
-    <h1>Nacionalidade</h1>
-    País natal <input type="search" name="paisn" id="paisn">
-    <input type="button" value="Verificar" onclick="identificar()">
+    <h1>Você é brasileiro?</h1>
+    <p>Digite seu país de origem:</p>
+    <input type="text" id="pais">
+    <input type="button" value="verificar" onclick="verificar()">
     <div id="res">
 
     </div>
+    
     <script>
-        function identificar() {
-            var paisloc = window.document.querySelector ('Input#paisn')
-            var res = window.document.querySelector('div#res')
-            var loc = String(paisloc.value.toUpperCase())
-            res.innerHTML += `O seu país de origem é ${loc.toUpperCase()}.`
-            if (loc == 'BRASIL') {
-                res.innerHTML += '<p>Você é brasileiro!</p>'
-            }else {
-                res.innerHTML += '<p>Você é estrangeiro!</p>'
-            }
+        function verificar() {
+            var país = window.document.getElementById('pais')
+            var res = window.document.getElementById('res')
+
+            res.innerHTML = `Você nasceu em ${país}!`
+
+            res.style.background = 'red'
         }
     </script>
 </body>
